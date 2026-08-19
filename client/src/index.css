@@ -82,10 +82,11 @@
   .site-header { position: fixed; z-index: 50; width: 100%; border-bottom: 1px solid transparent; background: linear-gradient(180deg, rgba(6,10,21,.92), rgba(6,10,21,0)); transition: background 180ms cubic-bezier(.23,1,.32,1), border-color 180ms cubic-bezier(.23,1,.32,1), backdrop-filter 180ms cubic-bezier(.23,1,.32,1); }
   .site-header--solid { border-color: rgba(255,255,255,.08); background: rgba(6,10,21,.9); backdrop-filter: blur(18px); }
   .brand-mark { display: inline-flex; align-items: center; gap: .65rem; color: #fbf7e9; text-decoration: none; }
-  .brand-mark img { object-fit: contain; filter: drop-shadow(0 0 14px rgba(213,168,65,.18)); }
+  .brand-logo { height: 3.55rem; width: 3.55rem; object-fit: contain; filter: drop-shadow(0 0 14px rgba(213,168,65,.18)); }
+  .brand-logo--compact { height: 2.45rem; width: 2.45rem; }
   .brand-lockup { display: flex; align-items: baseline; gap: .35rem; line-height: 1; }
-  .brand-lockup strong { color: #e7c56f; font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.6rem; font-weight: 600; letter-spacing: -.05em; }
-  .brand-lockup em { font-size: .6rem; font-style: normal; font-weight: 700; letter-spacing: .18em; }
+  .brand-lockup strong { color: #e7c56f; font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -.03em; }
+  .brand-lockup em { font-size: .55rem; font-style: normal; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
   .nav-link { color: #aeb6c7; font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; transition: color 160ms cubic-bezier(.23,1,.32,1); }
   .nav-link:hover { color: #e7c56f; }
   .mobile-menu { border-top: 1px solid rgba(255,255,255,.1); background: rgba(6,10,21,.98); box-shadow: 0 18px 42px rgba(0,0,0,.38); }

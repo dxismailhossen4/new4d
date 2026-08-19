@@ -1,4 +1,4 @@
-/** Midnight Ledger system: a quiet editorial frame, gold ledger rules, and transparent navigation that becomes decisively solid on scroll. */
+/** Midnight Ledger system: a quiet editorial frame, the official Malaysian Guru seal, gold ledger rules, and transparent navigation that becomes decisively solid on scroll. */
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowUpRight, ShieldCheck, LogOut, LayoutDashboard } from "lucide-react";
@@ -97,7 +97,7 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <BrandMark />
-            <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">A responsible membership space for clearly labelled number observations, free tips, and premium analysis.</p>
+            <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">A responsible membership space for clearly labelled number observations, free insights, and premium analysis.</p>
           </div>
           <div>
             <p className="eyebrow">Explore</p>
@@ -111,7 +111,7 @@ function Footer() {
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gold-300"><Link href="/disclaimer">Disclaimer</Link><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link></div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:justify-between"><span>© 2026 4D Insights Malaysia. All rights reserved.</span><span className="flex items-center gap-2"><ShieldCheck size={14} className="text-emerald-400" /> Responsible participation only</span></div>
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:justify-between"><span>© 2026 Malaysian Guru 4D Hotline. All rights reserved.</span><span className="flex items-center gap-2"><ShieldCheck size={14} className="text-emerald-400" /> Responsible participation only</span></div>
       </div>
     </footer>
   );
@@ -123,7 +123,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
 export function PageMeta({ title, description }: { title: string; description: string }) {
   useEffect(() => {
-    document.title = `${title} | 4D Insights Malaysia`;
+    document.title = `${title} | Malaysian Guru 4D Hotline`;
     const meta = document.querySelector('meta[name="description"]');
     meta?.setAttribute("content", description);
     const canonical = document.querySelector('link[rel="canonical"]');

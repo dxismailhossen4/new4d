@@ -1,15 +1,16 @@
-/** Midnight Ledger system: the gold four-part mark is always presented with breathing room and never reduced to a tiny decoration. */
+/** Midnight Ledger system: the owner-provided Malaysian Guru 4D Hotline seal anchors every global brand surface. */
 import { Link } from "wouter";
+import { managedAsset } from "@/lib/assets";
 
-const symbolUrl = "/manus-storage/new4d-symbol_66725c26.png";
+export const officialLogoUrl = managedAsset("malaysian-guru-4d-hotline-logo_a0093a5d.png");
 
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="brand-mark" aria-label="4D Insights Malaysia home">
-      <img src={symbolUrl} className={compact ? "h-8 w-8" : "h-10 w-10"} alt="4D Insights abstract gold symbol" />
+    <Link href="/" className="brand-mark" aria-label="Malaysian Guru 4D Hotline home">
+      <img src={officialLogoUrl} className={compact ? "brand-logo brand-logo--compact" : "brand-logo"} alt="Malaysian Guru 4D Hotline official logo" />
       <span className="brand-lockup">
-        <strong>4D</strong>
-        <em>INSIGHTS</em>
+        <strong>Malaysian Guru</strong>
+        <em>4D Hotline</em>
       </span>
     </Link>
   );

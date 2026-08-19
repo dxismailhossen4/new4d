@@ -4,12 +4,14 @@ import { Link } from "wouter";
 import { ArrowRight, Check, CircleHelp, Eye, FileText, LockKeyhole, Play, ShieldCheck, Sparkles, UserRoundPlus } from "lucide-react";
 import { DisclaimerStrip, PageMeta, SectionHeading, SiteLayout } from "@/components/SiteLayout";
 import { PredictionCard } from "@/components/PredictionCard";
+import { officialLogoUrl } from "@/components/BrandMark";
+import { managedAsset } from "@/lib/assets";
 import { formatDate } from "@/lib/content";
 import { useFreePredictions, usePublishedFaq, useResultShowcase } from "@/hooks/useContent";
 
-const heroImage = "/manus-storage/new4d-hero-midnight-ledger_6e33d219.jpg";
-const orbImage = "/manus-storage/new4d-insight-orb_fe3d1c38.jpg";
-const videoImage = "/manus-storage/new4d-video-poster_88b40868.jpg";
+const heroImage = managedAsset("new4d-hero-midnight-ledger_6e33d219.jpg");
+const orbImage = managedAsset("new4d-insight-orb_fe3d1c38.jpg");
+const videoImage = managedAsset("new4d-video-poster_88b40868.jpg");
 
 function EmptyContent({ message }: { message: string }) {
   return <div className="empty-state"><Eye size={25} className="text-gold-300" /><p className="max-w-sm text-sm leading-6">{message}</p></div>;
@@ -23,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.text = JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "4D Insights Malaysia", url: window.location.origin, description: "Responsible, informational 4D tips and premium analysis for Malaysian adults." });
+    script.text = JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "Malaysian Guru 4D Hotline", url: window.location.origin, description: "Responsible, informational 4D tips and premium analysis for Malaysian adults." });
     document.head.appendChild(script);
     return () => script.remove();
   }, []);
@@ -45,8 +47,7 @@ export default function Home() {
             <div className="mt-8 max-w-2xl"><DisclaimerStrip /></div>
           </div>
           <aside className="reveal-delay self-end border-l border-gold-300/45 py-3 pl-5 lg:justify-self-end lg:pb-6">
-            <p className="eyebrow">The operating standard</p>
-            <p className="mt-3 max-w-xs font-display text-2xl leading-none text-ivory">“Observation first. Guarantees never.”</p>
+            <div className="flex items-center gap-4"><img src={officialLogoUrl} alt="Malaysian Guru 4D Hotline official logo" className="h-[4.5rem] w-[4.5rem] border border-gold-300/30 object-contain sm:h-20 sm:w-20" /><div><p className="eyebrow">Official identity</p><p className="mt-2 max-w-[13rem] font-display text-xl leading-none text-ivory">“Observation first. Guarantees never.”</p></div></div>
             <div className="mt-7 flex gap-3 font-mono text-xs tracking-[.42em] text-gold-300"><span>◇</span><span>◇</span><span>◇</span><span>◇</span></div>
           </aside>
         </div>
