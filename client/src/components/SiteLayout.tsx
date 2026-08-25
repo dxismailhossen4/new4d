@@ -1,13 +1,32 @@
 /** Midnight Ledger system: a quiet editorial frame, the official Malaysian Guru seal, gold ledger rules, and transparent navigation that becomes decisively solid on scroll. */
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ArrowUpRight, ShieldCheck, LogOut, LayoutDashboard } from "lucide-react";
+import { Facebook, Instagram, Menu, X, ArrowUpRight, ShieldCheck, LogOut, LayoutDashboard } from "lucide-react";
 import { toast } from "sonner";
 import { BrandMark } from "@/components/BrandMark";
 import { disclaimer } from "@/lib/content";
 import { useAuth } from "@/contexts/AuthContext";
 
 const navLink = "nav-link";
+
+const socialLinks = [
+  { label: "Malaysia Singapore 4D", href: "https://www.facebook.com/malaysiasingapore4d6d", Icon: Facebook },
+  { label: "Official Facebook profile", href: "https://www.facebook.com/profile.php?id=61592890808867", Icon: Facebook },
+  { label: "Instagram @mdismail90154", href: "https://www.instagram.com/mdismail90154?igsh=enQxOGY5a3EzZXh4", Icon: Instagram },
+];
+
+export function ConnectWithUs() {
+  return <div>
+    <p className="eyebrow">Connect with us</p>
+    <div className="mt-4 grid gap-3 text-sm text-slate-300">
+      {socialLinks.map(({ label, href, Icon }) => <a key={href} href={href} target="_blank" rel="noreferrer" className="group flex items-start gap-3 transition-colors hover:text-gold-300">
+        <Icon size={16} className="mt-0.5 shrink-0 text-gold-300" />
+        <span>{label}</span>
+        <ArrowUpRight size={14} className="ml-auto mt-0.5 shrink-0 opacity-50 transition-opacity group-hover:opacity-100" />
+      </a>)}
+    </div>
+  </div>;
+}
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -94,7 +113,7 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink-950">
       <div className="container py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
           <div>
             <BrandMark />
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">A responsible membership space for clearly labelled number observations, free insights, and premium analysis.</p>
@@ -105,6 +124,7 @@ function Footer() {
               <Link href="/free-prediction">Free prediction</Link><Link href="/membership">Membership</Link><Link href="/my-account">My account</Link><Link href="/contact">Contact</Link><Link href="/faq">FAQ</Link>
             </div>
           </div>
+          <ConnectWithUs />
           <div>
             <p className="eyebrow">Responsible use</p>
             <p className="mt-4 text-sm leading-6 text-slate-400">{disclaimer}</p>

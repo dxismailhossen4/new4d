@@ -24,6 +24,22 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // GitHub Pages serves 404.html for unknown paths. That page forwards the
+      // original path here as ?p=... so history-based routing can be restored
+      // before React mounts.
+      (function restoreGitHubPagesRoute() {
+        var params = new URLSearchParams(window.location.search);
+        var path = params.get("p");
+        if (!path) return;
+
+        var query = params.get("q");
+        var restoredPath = "/" + path.replace(/^\/+/, "");
+        if (query) restoredPath += "?" + query;
+        if (window.location.hash) restoredPath += window.location.hash;
+        window.history.replaceState(null, "", restoredPath);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer

@@ -9,7 +9,31 @@ const rootAssets = resolve(root, "assets");
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });
 await cp(source, destination, { recursive: true });
-await cp(resolve(destination, "index.html"), resolve(destination, "404.html"));
+const fallbackHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>Redirecting…</p>
+    <script>
+      (function redirectGitHubPagesRoute() {
+        var location = window.location;
+        var path = location.pathname.replace(/^\\/+/, "");
+        var query = location.search.replace(/^\\?/, "");
+        var target = "/?p=" + encodeURIComponent(path);
+        if (query) target += "&q=" + encodeURIComponent(query);
+        target += location.hash;
+        location.replace(target);
+      })();
+    </script>
+  </body>
+</html>
+`;
+
+await writeFile(resolve(destination, "404.html"), fallbackHtml, "utf8" );
 await writeFile(resolve(destination, "CNAME"), "4dhotline.online\n", "utf8");
 
 await rm(rootAssets, { recursive: true, force: true });

@@ -20,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-DdwEmY7a.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DnRpVYLz.css">
+    <script type="module" crossorigin src="/assets/index-CV73Vz9o.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DGv6Qu-B.css">
     <script src="/__manus__/debug-collector.js" defer></script>
   </head>
 
@@ -87,6 +87,22 @@ Error generating stack: `+l.message+`
 </script>
 
     <div id="root"></div>
+    <script>
+      // GitHub Pages serves 404.html for unknown paths. That page forwards the
+      // original path here as ?p=... so history-based routing can be restored
+      // before React mounts.
+      (function restoreGitHubPagesRoute() {
+        var params = new URLSearchParams(window.location.search);
+        var path = params.get("p");
+        if (!path) return;
+
+        var query = params.get("q");
+        var restoredPath = "/" + path.replace(/^\/+/, "");
+        if (query) restoredPath += "?" + query;
+        if (window.location.hash) restoredPath += window.location.hash;
+        window.history.replaceState(null, "", restoredPath);
+      })();
+    </script>
     <script
       defer
       src="https://manus-analytics.com/umami"
