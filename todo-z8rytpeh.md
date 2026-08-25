@@ -1,0 +1,4 @@
+- [x] Assess Android tooling and Supabase mobile redirect requirements.
+- [x] Add an Android wrapper for the existing Vite admin system.
+- [x] Build and validate an installable Android APK.
+- [ ] Push mobile wrapper source updates to GitHub and deliver the APK.

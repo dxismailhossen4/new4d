@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">New4D Admin</string>
+    <string name="title_activity_main">New4D Admin</string>
+    <string name="package_name">com.new4d.admin</string>
+    <string name="custom_url_scheme">com.new4d.admin</string>
+</resources>
