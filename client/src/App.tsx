@@ -20,9 +20,10 @@ const ContactPage = lazy(() => import("./pages/InfoPages").then(module => ({ def
 const FAQPage = lazy(() => import("./pages/InfoPages").then(module => ({ default: module.FAQPage })));
 const LegalPage = lazy(() => import("./pages/InfoPages").then(module => ({ default: module.LegalPage })));
 const AdminPage = lazy(() => import("./pages/Admin"));
-
+const FileVaultPage = lazy(() => import("./pages/FileVault"));
 
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return <Suspense fallback={<div className="grid min-h-screen place-items-center bg-ink-950 text-sm text-slate-400">Loading secure workspace…</div>}>
     <Switch>
       <Route path={"/"} component={Home} />
@@ -37,6 +38,7 @@ function Router() {
       <Route path={"/contact"} component={ContactPage} />
       <Route path={"/faq"} component={FAQPage} />
       <Route path={"/admin"} component={AdminPage} />
+      <Route path={"/file-vault"} component={FileVaultPage} />
       <Route path={"/disclaimer"}>{() => <LegalPage type="disclaimer" />}</Route>
       <Route path={"/terms"}>{() => <LegalPage type="terms" />}</Route>
       <Route path={"/privacy"}>{() => <LegalPage type="privacy" />}</Route>

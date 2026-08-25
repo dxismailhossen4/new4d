@@ -6,12 +6,20 @@
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "scheme": "new4dadmin",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#070b15"
+    },
     "android": {
       "package": "com.new4d.admin.expo",
-      "permissions": [
-        "INTERNET"
-      ],
-      "allowBackup": false
+      "permissions": ["INTERNET"],
+      "allowBackup": false,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#070b15"
+      }
     },
     "extra": {
       "adminUrl": "https://4dinsight-deeeyrxh.manus.space/admin",

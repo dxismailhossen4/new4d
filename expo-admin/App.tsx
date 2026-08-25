@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -17,9 +17,17 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
 
+  useEffect(() => {
+    // The remote workspace may keep its document load open while long-lived
+    // requests complete. Never block the visible WebView indefinitely.
+    const failSafe = setTimeout(() => setLoading(false), 4500);
+    return () => clearTimeout(failSafe);
+  }, []);
+
   const retry = () => {
     setFailed(false);
     setLoading(true);
+    setTimeout(() => setLoading(false), 4500);
     webViewRef.current?.reload();
   };
 
@@ -38,8 +46,15 @@ export default function App() {
             thirdPartyCookiesEnabled
             pullToRefreshEnabled
             allowsBackForwardNavigationGestures
+            onLoadProgress={({ nativeEvent }) => {
+              if (nativeEvent.progress >= 0.55) setLoading(false);
+            }}
             onLoadStart={() => setLoading(true)}
             onLoadEnd={() => setLoading(false)}
+            onHttpError={() => {
+              setLoading(false);
+              setFailed(true);
+            }}
             onError={() => {
               setLoading(false);
               setFailed(true);
@@ -65,6 +80,7 @@ export default function App() {
           <View style={styles.loadingOverlay} pointerEvents="none">
             <ActivityIndicator size="large" color="#e5b643" />
             <Text style={styles.loadingText}>Opening admin workspace</Text>
+            <Text style={styles.loadingHint}>This will continue in the background.</Text>
           </View>
         ) : null}
       </View>
@@ -88,6 +104,10 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     letterSpacing: 1.2,
     textTransform: "uppercase",
+  },
+  loadingHint: {
+    color: "#8791a6",
+    fontSize: 13,
   },
   errorState: {
     flex: 1,

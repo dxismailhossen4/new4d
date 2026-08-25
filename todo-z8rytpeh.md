@@ -9,3 +9,13 @@
 - [x] Confirm the Expo account session and continue the Expo Android build submission.
 - [x] Resolve the initial Expo bundle failure and resubmit the Android APK build.
 - [ ] Synchronize the completed Expo mobile wrapper source to GitHub.
+- [x] Review current payment/member upload usage and define secure full-stack file storage requirements.
+- [x] Upgrade the web project to full-stack capabilities and restore the required tRPC dependencies after the template merge.
+- [x] Implement and validate authorized file storage upload and retrieval flows with owner-scoped metadata, protected procedures, content/type validation, and the `/file-vault` interface.
+- [ ] Synchronize the full-stack storage implementation to GitHub.
+- [x] Verify the protected file-storage router with positive and negative integration-style authorization tests for owner scoping.
+- [x] Diagnose and fix the Expo APK loading overlay that remains on screen after launch with progress-based dismissal, a bounded fallback delay, and error recovery.
+- [x] Rebuild and test the corrected Expo APK before delivery.
+- [x] Apply the website’s current brand logo as the Expo Android app icon and splash logo.
+- [x] Configure the deployed Supabase browser environment variables so live content can load.
+- [x] Verify the configured Supabase publishable key against the Auth settings endpoint and confirm the repaired website builds and loads the secure storage interface.
