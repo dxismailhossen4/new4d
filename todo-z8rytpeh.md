@@ -2,3 +2,10 @@
 - [x] Add an Android wrapper for the existing Vite admin system.
 - [x] Build and validate an installable Android APK.
 - [ ] Push mobile wrapper source updates to GitHub and deliver the APK.
+- [x] Verify the live Supabase owner accounts and administrator designations without exposing credentials; the membership schema is not yet deployed, one owner account is unconfirmed, and the other owner account does not exist.
+- [x] Assess Expo account access and mobile-wrapper compatibility for the New4D admin system.
+- [x] Add an Expo-compatible Android project configuration and build profile.
+- [x] Submit an Expo Android build; a signed internal Android APK completed successfully and was integrity-checked.
+- [x] Confirm the Expo account session and continue the Expo Android build submission.
+- [x] Resolve the initial Expo bundle failure and resubmit the Android APK build.
+- [ ] Synchronize the completed Expo mobile wrapper source to GitHub.

@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "New4D Admin",
+    "slug": "new4d-admin",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "new4dadmin",
+    "android": {
+      "package": "com.new4d.admin.expo",
+      "permissions": [
+        "INTERNET"
+      ],
+      "allowBackup": false
+    },
+    "extra": {
+      "adminUrl": "https://4dinsight-deeeyrxh.manus.space/admin",
+      "eas": {
+        "projectId": "670940ea-16b3-4e37-8315-90dcc49baea5"
+      }
+    },
+    "owner": "ismail1123sdp"
+  }
+}
