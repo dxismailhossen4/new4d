@@ -1,7 +1,7 @@
 /** Midnight Ledger system: a quiet editorial frame, the official Malaysian Guru seal, gold ledger rules, and transparent navigation that becomes decisively solid on scroll. */
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Facebook, Instagram, Menu, X, ArrowUpRight, ShieldCheck, LogOut, LayoutDashboard } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Menu, X, ArrowUpRight, ShieldCheck, LogOut, LayoutDashboard } from "lucide-react";
 import { toast } from "sonner";
 import { BrandMark } from "@/components/BrandMark";
 import { disclaimer } from "@/lib/content";
@@ -13,6 +13,9 @@ const socialLinks = [
   { label: "Malaysia Singapore 4D", href: "https://www.facebook.com/malaysiasingapore4d6d", Icon: Facebook },
   { label: "Official Facebook profile", href: "https://www.facebook.com/profile.php?id=61592890808867", Icon: Facebook },
   { label: "Instagram @mdismail90154", href: "https://www.instagram.com/mdismail90154?igsh=enQxOGY5a3EzZXh4", Icon: Instagram },
+  { label: "WhatsApp / IMO +880 1324 360629", href: "https://wa.me/8801324360629", Icon: MessageCircle },
+  { label: "WhatsApp / IMO +880 1706 559143", href: "https://wa.me/8801706559143", Icon: MessageCircle },
+  { label: "WhatsApp / IMO +880 1303 128198", href: "https://wa.me/8801303128198", Icon: MessageCircle },
 ];
 
 export function ConnectWithUs() {
