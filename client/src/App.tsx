@@ -20,6 +20,7 @@ const ContactPage = lazy(() => import("./pages/InfoPages").then(module => ({ def
 const FAQPage = lazy(() => import("./pages/InfoPages").then(module => ({ default: module.FAQPage })));
 const LegalPage = lazy(() => import("./pages/InfoPages").then(module => ({ default: module.LegalPage })));
 const AdminPage = lazy(() => import("./pages/Admin"));
+const PCDashboardPage = lazy(() => import("./pages/PCDashboard"));
 const FileVaultPage = lazy(() => import("./pages/FileVault"));
 
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/contact"} component={ContactPage} />
       <Route path={"/faq"} component={FAQPage} />
       <Route path={"/admin"} component={AdminPage} />
+      <Route path={"/pc-dashboard"} component={PCDashboardPage} />
       <Route path={"/file-vault"} component={FileVaultPage} />
       <Route path={"/disclaimer"}>{() => <LegalPage type="disclaimer" />}</Route>
       <Route path={"/terms"}>{() => <LegalPage type="terms" />}</Route>
