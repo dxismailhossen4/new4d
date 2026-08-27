@@ -9,6 +9,7 @@
     "build:github-pages": "pnpm build && node scripts/prepare-github-pages.mjs",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit",
+    "test": "vitest run",
     "format": "prettier --write .",
     "android:sync": "pnpm build && cap sync android",
     "android:debug": "pnpm build && cap sync android && cd android && ./gradlew assembleDebug"
