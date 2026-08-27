@@ -7,7 +7,7 @@ import { isSupabaseConfigured, supabase } from "@/lib/supabase";
 
 type Section = "overview" | "members" | "payments" | "free" | "vip" | "results" | "content" | "notifications" | "settings";
 type Row = Record<string, any>;
-const OWNER_EMAILS = ["dxismailhossen4@gmail.com", "ah2836447@gmail.com"];
+const OWNER_EMAILS = ["dxismailhossen4@gmail.com"];
 const navGroups = [
   { label: "Command center", items: [{ id: "overview", label: "Overview", icon: LayoutDashboard }] },
   { label: "Operations", items: [{ id: "members", label: "Members", icon: Users }, { id: "payments", label: "Payments", icon: CreditCard }, { id: "free", label: "Free predictions", icon: Sparkles }, { id: "vip", label: "VIP predictions", icon: Zap }, { id: "results", label: "Final analysis", icon: ClipboardCheck }] },
