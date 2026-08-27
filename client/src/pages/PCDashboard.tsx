@@ -12,7 +12,7 @@ type Counts = {
   results: number;
 };
 
-const OWNER_EMAILS = ["dxismailhossen4@gmail.com", "ah2836447@gmail.com"];
+const OWNER_EMAILS = ["dxismailhossen4@gmail.com"];
 
 const desktopModules = [
   { title: "Member management", description: "Review new registrations, access and membership status.", icon: Users, accent: "gold" },
